@@ -1,0 +1,63 @@
+Name         : kf5-libmm-qt
+Version      : 5.0.0
+Release      : 1
+Group        : System Environment/Libraries
+License      : LGPLv2+
+Summary      : Library wrapping ModemManager DBus API
+Description  : |
+  Qt 5 libraries and header files for developing applications that use ModemManager
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kde5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - ModemManager-devel >= 1.0.0
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5PrintSupport
+Requires:
+    - kde5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc README"
+    - "%{_kf5_libdir}/libKF5ModemManagerQt.so.*"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Files:
+          - "%{_kf5_libdir}/libKF5ModemManagerQt.so"
+          - "%{_kf5_libdir}/cmake/KF5ModemManagerQt"
+          - "%{_kf5_includedir}/ModemManagerQt"
+          - "%{_kf5_includedir}/modemmanagerqt_version.h"
+          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
