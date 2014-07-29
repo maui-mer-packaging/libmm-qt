@@ -22,7 +22,7 @@ Configure    : none
 Builder      : none
 
 PkgBR:
-    - kde5-rpm-macros
+    - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
     - ModemManager-devel >= 1.0.0
