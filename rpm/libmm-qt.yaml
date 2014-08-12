@@ -1,7 +1,7 @@
-Name         : kf5-libmm-qt
-Version      : 5.0.0
+Name         : libmm-qt
+Version      : 5.0.91
 Release      : 1
-Group        : System Environment/Libraries
+Group        : System/Libraries
 License      : LGPLv2+
 Summary      : Library wrapping ModemManager DBus API
 Description  : |
@@ -37,7 +37,7 @@ PkgConfigBR:
     - Qt5Test
     - Qt5PrintSupport
 Requires:
-    - kde5-filesystem
+    - kf5-filesystem
 
 RequiresPost:
     - /sbin/ldconfig
@@ -57,7 +57,7 @@ SubPackages:
         that use %{name}.
       Files:
           - "%{_kf5_libdir}/libKF5ModemManagerQt.so"
-          - "%{_kf5_libdir}/cmake/KF5ModemManagerQt"
+          - "%{_kf5_cmakedir}/KF5ModemManagerQt"
           - "%{_kf5_includedir}/ModemManagerQt"
           - "%{_kf5_includedir}/modemmanagerqt_version.h"
-          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
+          - "%{_kf5_mkspecsdir}/*.pri"
