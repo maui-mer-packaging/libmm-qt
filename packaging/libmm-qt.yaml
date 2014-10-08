@@ -7,7 +7,6 @@ Summary      : Library wrapping ModemManager DBus API
 Description  : |
   Qt 5 libraries and header files for developing applications that use ModemManager
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
