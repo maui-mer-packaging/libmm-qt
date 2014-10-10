@@ -9,7 +9,7 @@ Name:       libmm-qt
 # << macros
 
 Summary:    Library wrapping ModemManager DBus API
-Version:    5.0.91
+Version:    5.1.0
 Release:    1
 Group:      System/Libraries
 License:    LGPLv2+
